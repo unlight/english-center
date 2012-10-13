@@ -1,0 +1,9 @@
+Используемые иинструменты и технологии:
+
+1. normalize.css
+Альтернативный сброс CSS (CSS Reset)
+https://github.com/necolas/normalize.css
+
+2. Справочник
+https://developer.mozilla.org
+
