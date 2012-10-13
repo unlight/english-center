@@ -1,0 +1,37 @@
+.Row {
+	width: 980px;
+}
+
+#Head {
+	/*background: #3EAAE4;*/
+	/*padding-top: 20px;*/
+}
+
+.SiteTitle {
+	background: url('logo1.png') 0 3px no-repeat;
+	display: inline-block;
+	height: 55px;
+	padding-left: 60px;
+	line-height: 52px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Tahoma, Verdana;
+	text-shadow: 1px 1px 3px #555
+}
+
+.SiteTitle a {
+	text-decoration: none;
+	color: #007DC5;
+}
+
+.SiteMenuWrapper {
+	background: #38ABE3;
+	border: 1px solid #333;
+	border-right: 0;
+	border-left: 0;
+	padding: 2px 0;
+}
+
+#Foot {
+	color: #555;
+}

@@ -7,3 +7,6 @@ https://github.com/necolas/normalize.css
 2. Справочник
 https://developer.mozilla.org
 
+3. Sublime-Text-2 
+Текстовый редактор с подстветкой кода.
+http://www.sublimetext.com/2/
