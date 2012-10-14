@@ -3,8 +3,17 @@
 }
 
 #Head {
-	/*background: #3EAAE4;*/
-	/*padding-top: 20px;*/
+}
+
+#Body .ContentColumn {
+   /*margin: 0 0 0 230px*/
+   float: right;
+   width: 74%;
+}
+
+#Panel {
+	width: 24%;
+	float: left;
 }
 
 .SiteTitle {
@@ -30,6 +39,10 @@
 	border-right: 0;
 	border-left: 0;
 	padding: 2px 0;
+}
+
+#Body {
+	padding-top: 20px;
 }
 
 #Foot {
