@@ -12,16 +12,15 @@ function bindReady(f) {
 
 }
 
-/*function includeHtml(file) {
+function insertHtml(file, to) {
 	var request = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	//request.responseType = 'text';
 	request.open('GET', file); 
 	request.onreadystatechange = function() {
 		if (request.readyState == 4) {
-			console.log(request.responseXML);
-			//document.write(request.responseText);
-			//document.close();
+			to.innerHTML = request.responseText;
 		}
 	}
-	request.send(null);
-}*/
+	request.send();
+}
+

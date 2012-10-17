@@ -24,7 +24,7 @@
 	line-height: 52px;
 	font-size: 30px;
 	font-weight: bold;
-	font-family: Tahoma, Verdana;
+	/*font-family: Tahoma, Verdana;*/
 	text-shadow: 1px 1px 3px #555
 }
 
@@ -33,7 +33,7 @@
 	color: #007DC5;
 }
 
-.SiteMenuWrapper {
+#SiteMenuWrapper {
 	background: #38ABE3;
 	border: 1px solid #333;
 	border-right: 0;
