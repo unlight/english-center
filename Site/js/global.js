@@ -11,5 +11,4 @@ bindReady(function(){
 	var frame = document.getElementById('Frame');
 	PinnedFooter({frame: frame});
 
-
 });
