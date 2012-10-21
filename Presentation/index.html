@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js</title>
-    
-    <meta name="description" content="Презентация для курсового проекта" />
-    <meta name="author" content="Васильев Роман" />
-
-    <link href="style.css" rel="stylesheet" />
-    
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<title>Курсовой проект - Презентация - Лингвистический центр</title>
+	<link href="presentation.css" rel="stylesheet" type="text/css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+	if (typeof jQuery == 'undefined') {
+	document.write('<'+'script type="text/javascript" src="jquery/jquery.min.js"></'+'script'+'>');
+	}
+	</script>
+	<script src="mosho/dist/mosho.js"></script>
+	<script src="presentation.js"></script>
 </head>
+<body>
+<div id="mosho">
 
-<body class="impress-not-supported">
-
-<div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+<div class="mosho-slide" id="title" data-scale="1">
+	<h1>Курсовой проект</h1>
+	<h2>Сайт АНО: Лингвистеческий центр</h2>
+	<!-- <p>Сайт бюро переводов</p> -->
 </div>
 
-<div id="impress">
+<div class="mosho-slide" id="tragets" data-scale="1">
+	<h3>Цели и задачи проекта</h3>
+</div>
 
+<div class="mosho-slide" id="thanks" data-scale="1">
+	<h1>Спасибо за внимание</h1>
+	<h2>Вопросы?</h2>
 </div>
 
 
-<script src="impress.js/js/impress.js"></script>
-<script>impress().init();</script>
 
+</div>
 </body>
 </html>
