@@ -1,3 +1,16 @@
+function getValue(key, collection, value, remove) {
+	if (value == undefined) value = false;
+	if (remove == undefined) remove = false;
+	var result = value;
+	if (typeof collection == 'object' && key in collection) {
+		result = collection[key];
+	}
+	if (remove) {
+		delete collection[key];
+	}
+	return result;
+}
+
 function bindReady(f) {
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', f);

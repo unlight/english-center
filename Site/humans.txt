@@ -18,3 +18,7 @@ http://www.nattyware.com/pixie.php
 5. Fixie.js
 Добавляет текст Lorem Ipsum
 https://github.com/ryhan/fixie
+
+6. Firebug
+
+7. NikFileTree

@@ -32,11 +32,27 @@ bindReady(function(){
 	var currentYear = document.getElementById('CurrentYear');
 	currentYear.innerHTML = (new Date()).getFullYear();
 
+
+	// Calculate cost.
+	new function(){
+		var price = {
+			'category': {1: 1.2, 2: 1, 3: 1.5, 4: 1.3}
+		};
+		var calculateCostButton = document.getElementById('CalculateCostButton');
+		if (calculateCostButton) {
+			var form = calculateCostButton.form;
+			var selectedIndex = form.Category.selectedIndex;
+			var selectedOption = form.Category.children[selectedIndex];
+			var coefficient = getValue(selectedOption.value, price.category);
+		}
+	}();
+
+	// Lorem ipsum script.
 	if (typeof fixie != 'undefined') {
 		fixie.init();
 	}
 
-	// Last. Pinned footer
+	// Last. Pinned footer.
 	var frame = document.getElementById('Frame');
 	PinnedFooter({frame: frame});
 

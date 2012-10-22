@@ -81,6 +81,56 @@
 	padding: 20px 0 0 0;
 }
 
+/* ======================================================== Forms */
+form ul {
+	padding: 0;
+	list-style: none;
+}
+
+form ul li {
+	margin-bottom: 10px;
+}
+
+form ul li label:first-child {
+	display: block;
+	font-size: 105%;
+	float: left;
+	width: 150px;
+}
+
+form ul li label.RadioLabel > input[type="radio"] {
+	vertical-align: bottom;
+}
+
+label.RadioLabel + label.RadioLabel {
+	margin-left: 10px;
+}
+
+form .Hint {
+	margin: 0 0 5px;
+	color: #888;
+	font-size: 90%;
+}
+
+form input.Number {
+	width: 50px;
+}
+
 #Foot {
 	color: #555;
+}
+
+.Info {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background: #fafafa;
+	padding: 2px 5px;
+}
+
+div > p:first-child {
+	margin-top: 0;
+}
+
+div > p:last-child {
+	margin-bottom: 0;
 }
