@@ -43,7 +43,7 @@
 
 .TagCloud li {
 	display: inline-block;
-	background: #F7F9F9;
+	/*background: #FEFEFE;*/
 	padding: 0 4px;
 	border-radius: 2px;
 }

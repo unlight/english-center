@@ -19,7 +19,11 @@ bindReady(function(){
 			e.preventDefault();
 			return false;
 		});
-	});	
+	});
+
+	insertHtml('foot-module.html', function(params) {
+		document.getElementById('Foot').innerHTML = params.responseText;
+	});
 
 	// Adding favicons.
 	addFavIcons();

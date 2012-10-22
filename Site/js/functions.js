@@ -45,5 +45,3 @@ function addFavIcons() {
 		}
 	}
 }
-
-//attr('style', 'padding-left: 20px; background: transparent url('+url+') no-repeat center left');
