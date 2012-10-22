@@ -23,12 +23,17 @@ function PinnedFooter(options) {
 
 	var pin = function() {
 		if (isVerticalScrollbar()) return;
-		var footHeight = foot.offsetHeight;
-		var windowHeight = window.innerHeight;
-		var bodyAddend = windowHeight - getFrameHeight() - footHeight;
 		var bodyHeight = body.offsetHeight;
-		
-		body.style.height = bodyHeight + bodyAddend + 'px';
+		var bodyAddend = window.innerHeight - getFrameHeight();
+		var outerBodyHeight = 0;
+		var style = getComputedStyle(body);
+		var props = 'margin-top margin-bottom padding-top padding-bottom border-top-width border-bottom-width'.split(' ');
+		for (var i = 0; i < props.length; i++) {
+			var value = style.getPropertyValue(props[i]);
+			var intValue = parseInt(value, 10);
+			outerBodyHeight += intValue;
+		}
+		body.style.height = bodyHeight + bodyAddend - outerBodyHeight + 'px';
 	}
 
 	if (window.addEventListener) {
