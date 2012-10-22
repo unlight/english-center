@@ -1,13 +1,8 @@
 .Row {
-	width: 980px;
+	width: 960px;
 }
 
-/*#Head > .Row {
-	height: 60px;
-}*/
-
 #Body .ContentColumn {
-   /*margin: 0 0 0 230px*/
    float: right;
    width: 74%;
 }
@@ -17,18 +12,55 @@
 	float: left;
 }
 
+.Box {
+   border-radius: 2px;
+   background: #FAFFFF;
+   padding: 6px 10px;
+   margin: 0 0 10px;
+}
+
+.Box h4 {
+	border-bottom: 1px solid #eee;
+}
+
+.Box ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.Box ul li {
+	margin-bottom: 4px;
+}
+
+.HasCount li span {
+	float: right;
+	border-radius: 2px;
+	background: #fff;
+	padding: 0 4px;
+	border: 1px solid #eee;
+}
+
+.TagCloud li {
+	display: inline-block;
+	background: #F7F9F9;
+	padding: 0 4px;
+	border-radius: 2px;
+}
+
+.TagCloud li span {
+	display: none;
+}
+
 .SiteTitle {
 	background: url("logo.jpg") no-repeat scroll 0px 0px transparent;
 	padding-left: 90px;
-	/*line-height: 60px;*/
 	font-size: 40px;
 	line-height: 65px;
 	font-weight: normal;
 	display: block;
 	height: 70px;
 	font-family: Impact, Arial;
-	/*font-style: italic;*/
-	/*text-shadow: 1px 1px 1px #0085A1;*/
 }
 
 .SiteTitle a {
