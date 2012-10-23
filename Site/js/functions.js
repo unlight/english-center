@@ -11,6 +11,104 @@ function getValue(key, collection, value, remove) {
 	return result;
 }
 
+function getFormValue(input) {
+	var value = null;
+	if (input instanceof NodeList) {
+		var found = false;
+		for (var i in input) {
+			if (input[i].checked) {
+				input = input[i];
+				found = true;
+				break;
+			}
+		}
+		if (!found) return null;
+	}
+	var name = input.nodeName;
+	if (name == 'INPUT') name = input.type.toUpperCase();
+	switch (name) {
+		case 'SELECT': {
+			var selectedIndex = input.selectedIndex;
+			var selectedOption = input.children[selectedIndex];
+			value = selectedOption.value;
+		} break;
+		case 'RADIO': {
+			if (input.checked) {
+				value = input.value;
+			}
+		} break;
+		case 'TEXT': {
+			value = input.value;
+		} break;
+		case 'CHECKBOX': {
+			value = false;
+			if (input.checked) {
+				value = input.value;
+			}
+		} break;
+		case 'BUTTON': {
+			value = input.value;
+		} break;
+		default: throw "Unknown input: " +[input, name].join(' ') + ".";
+	}
+	return value;
+}
+
+function validateFormInput(input) {
+	var classes = input.className.split(' ');
+	var value = getFormValue(input.form[input.name]);
+	var labelText = getInputLabel(input);
+	var errors = [];
+	for (var i = 0; i < classes.length; i++) {
+		var c = classes[i];
+		if (c == "" || c.indexOf('Validate') != 0) continue;
+		var type = c.slice('Validate'.length);
+		var errorText = "";
+		switch (type) {
+			case 'Required': {
+				if (value == "" || value == null) {
+					errorText = "Не заполнено поле.";
+				}
+			} break;
+			case 'Integer': {
+				if (!isNumeric(value) || parseInt(value, 10) != value) {
+					errorText = "Не целое число.";
+				}
+			} break;
+			default: throw "Unknown validation: " + [type, input].join(' ') + ".";
+		}
+		if (errorText) errors.push(labelText + ": " + errorText);
+	}
+	return errors;
+}
+
+function getInputLabel(input) {
+	var result = input.name;
+	for (var parent = input.parentNode; ; parent = parent.parentNode) {
+		if (parent == null || parent.nodeName == 'form') {
+			break;
+		}
+		if (parent.nodeName == 'LI') {
+			result = parent.children[0];
+			result = result.textContent; 
+			break;
+		}
+	}
+	return result;
+}
+
+function inArray(needle, haystack) {
+	for (var i = 0; i < haystack.length; i++) {
+		if (needle == haystack[i]) return true;
+	}
+	return false;
+}
+
+function isNumeric(mixed) {
+	var result = !isNaN(parseFloat(mixed)) && isFinite(mixed);
+	return result;
+}
+
 function bindReady(f) {
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', f);

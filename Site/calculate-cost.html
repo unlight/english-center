@@ -46,7 +46,7 @@
 						<form>
 							<ul>
 							<li><label for="Category">Категория</label>
-								<select name="category" id="Category">
+								<select name="Category" id="Category">
 									<option value="1">Не знаю</option>
 									<option value="2">Разговорный</option>
 									<option value="3">Технический</option>
@@ -55,26 +55,29 @@
 								<p class="Hint">Выберите стиль текста.</p>
 							</li>
 							<li>
-								<label for="Direction">Направление</label>
+								<label>Направление</label>
 								<label class="RadioLabel" for="EnRu">
-									<input type="radio" name="Direction" value="1" id="EnRu" />
+									<input type="radio" name="Direction" value="1" id="EnRu" class="ValidateRequired" />
 									Английский > Русский
 								</label>
 								<label class="RadioLabel" for="RuEn">
-									<input type="radio" name="Direction" value="2" id="RuEn" />
+									<input type="radio" name="Direction" value="2" id="RuEn" class="ValidateRequired" />
 									Русский > Английский
 								</label>
 							</li>
 							<li>
-								<label for="NumberOfPages">Страниц</label>
-								<input type="text" class="Number" id="NumberOfPages" />
+								<label for="NumberOfPages">Страницы</label>
+								<input type="text" id="NumberOfPages" name="NumberOfPages" class="Number ValidateRequired ValidateInteger" />
 							</li>
 							<li>
 								<label for="Urgent">Срочный</label>
-								<input type="checkbox" id="Urgent" value="1" />
+								<input type="checkbox" id="Urgent" name="Urgent" value="1" />
 							</li>
 							</ul>
-							<input type="button" value="Рассчитать стоимость" id="CalculateCostButton" />
+							<div class="Info" id="TotalPriceInfo" style="display:none">
+								Приблизительная стоимость перевода составит: <span id="TotalPriceValue">?</span> рублей.
+							</div>
+							<input name="CalculateCost" type="button" value="Рассчитать стоимость" class="Button" id="CalculateCostButton" />
 						</form>
 
 				</div>

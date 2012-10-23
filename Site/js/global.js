@@ -34,18 +34,58 @@ bindReady(function(){
 
 
 	// Calculate cost.
-	new function(){
-		var price = {
-			'category': {1: 1.2, 2: 1, 3: 1.5, 4: 1.3}
+	window.ca = new function(){
+		var priceForPage = 250;
+		var priceCoefficients = {
+			'Category': {1: 1.2, 2: 1, 3: 1.5, 4: 1.3},
+			'Direction': {1: 1, 2: 1.1},
+			'Urgent': {'false': 1, 0: 1, 1: 1.4}
 		};
 		var calculateCostButton = document.getElementById('CalculateCostButton');
-		if (calculateCostButton) {
+		if (!calculateCostButton) return;
+		calculateCostButton.addEventListener('click', function() {
 			var form = calculateCostButton.form;
-			var selectedIndex = form.Category.selectedIndex;
-			var selectedOption = form.Category.children[selectedIndex];
-			var coefficient = getValue(selectedOption.value, price.category);
-		}
-	}();
+			var values = {};
+			var errors = [];
+			for (var i = 0; i < form.length; i++) {
+				var input = form[i];
+				var name = input.name;
+				var value = getFormValue(form[name]);
+				values[name] = value;
+				// Validation.
+				var validationResults = validateFormInput(input);
+				if (validationResults.length > 0) {
+					errors = errors.concat(validationResults);
+				}
+			}
+			
+			var formErrors = document.getElementById('FormErrors');
+			if (formErrors) form.removeChild(formErrors);
+
+			if (errors.length > 0) {
+				var div = document.createElement('div');
+				div.innerHTML = [
+					'<ul class="Errors" id="FormErrors">',
+					'<li>' + errors.join('</li><li>') + '</li>',
+					'</ul>'
+				].join('');
+				var errorList = div.firstChild;
+				form.insertBefore(errorList, form.children[0]);
+				return false;
+			}
+			// Calculate.
+			var coefficient = 1;
+			for (var name in values) {
+				var value = values[name];
+				var amplifier = getValue(value, getValue(name, priceCoefficients));
+				if (amplifier && amplifier > 1) coefficient *= amplifier;
+			}
+			var pages = parseInt(values.NumberOfPages, 10);
+			var totalPrice = values.NumberOfPages * priceForPage * coefficient;
+			document.getElementById('TotalPriceValue').innerHTML = totalPrice;
+			document.getElementById('TotalPriceInfo').style.display = 'block';
+		});
+	};
 
 	// Lorem ipsum script.
 	if (typeof fixie != 'undefined') {
