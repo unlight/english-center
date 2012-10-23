@@ -22,7 +22,10 @@ function PinnedFooter(options) {
 	}
 
 	var pin = function() {
-		if (isVerticalScrollbar()) return;
+		if (isVerticalScrollbar()) {
+			//body.style.height = 'auto';
+			return;	
+		};
 		var bodyHeight = body.offsetHeight;
 		var bodyAddend = window.innerHeight - getFrameHeight();
 		var outerBodyHeight = 0;
@@ -40,6 +43,13 @@ function PinnedFooter(options) {
 		window.addEventListener('resize', pin);
 		window.addEventListener('scroll', pin);
 	}
+
+	var tick = function() {
+		pin();
+		setTimeout(tick, 400);
+	}
+
+	tick();
 
 	pin();
 }

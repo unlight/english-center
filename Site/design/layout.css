@@ -173,10 +173,17 @@ ul.DataList {
 	padding: 0;
 }
 
-ul.DataList li {
-	clear: both;
+ul.DataList li.Item {
 	border-bottom: 1px solid #eee;
-	margin-bottom: 20px;
+	margin: 0 0 20px 0;
+	clear: both;
+	width: auto;
+}
+
+ul.DataList li.Item:after {
+	clear: both;
+	content: "";
+	display: table;
 }
 
 #about_teachers h2 {
