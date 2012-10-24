@@ -1,38 +1,77 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE HTML>
+<html lang="ru-RU">
 <head>
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-	<title>Курсовой проект - Презентация - Лингвистический центр</title>
-	<link href="presentation.css" rel="stylesheet" type="text/css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script>
-	if (typeof jQuery == 'undefined') {
-	document.write('<'+'script type="text/javascript" src="jquery/jquery.min.js"></'+'script'+'>');
-	}
-	</script>
-	<script src="mosho/dist/mosho.js"></script>
-	<script src="presentation.js"></script>
+	<title>Шаблон презентаций Shower</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="wibbon/styles/style.css">
+	<link rel="stylesheet" href="wibbon/styles/print.css" media="print">
+	<style>
+		#Cover h2 {
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+			}
+	</style>
 </head>
-<body>
-<div id="mosho">
+<body class="list">
+	<header class="caption">
+		<h1>Курсовой проект: Лингвистический центр "С"</h1>
+		<p>Васильев Роман, ACCP-129A</p>
+	</header>
 
-<div class="mosho-slide" id="title" data-scale="1">
-	<h1>Курсовой проект</h1>
-	<h2>Сайт АНО: Лингвистический центр</h2>
-	<!-- <p>Сайт бюро переводов</p> -->
-</div>
+ 	<div class="slide" id="Title"><div>
+		<section>
+			<header>
+				<h1>Курсовой проект</h1>
+				<h2>Лингвистический центр</h2>
+			</header>
+		</section>
+	</div></div>
 
-<div class="mosho-slide" id="tragets" data-scale="1">
-	<h3>Цели и задачи проекта</h3>
-</div>
+	<div class="slide" id="Targets"><div>
+		<section>
+			<header>
+				<h2>Цели и задачи проекта</h2>
+			</header>
+			<ul>
+				<li>Очередь заведено создаете</li>
+				<li>Те про, джоэл должен написано вы всю</li>
+				<li>Получаете отказаться программистов</li>
+				<li>Ещё то этой вреде внешних.</li>
+			</ul>
+		</section>
+	</div></div>
 
-<div class="mosho-slide" id="thanks" data-scale="1">
-	<h1>Спасибо за внимание</h1>
-	<h2>Вопросы?</h2>
-</div>
+	
+<!-- 	<div class="slide cover" id="Cover"><div>
+		<section>
+			<header>
+				<h2>Шаблон презентации Shower</h2>
+			</header>
+			<img src="pictures/cover.jpg" alt="">
+		</section>
+	</div></div> -->
+
+<!-- 	<div class="slide" id="Header"><div>
+		<section>
+			<header>
+				<h2>Заголовок</h2>
+			</header>
+			<p>Очередь <code>заведено</code> создаете <strong>те про,</strong> джоэл должен написано вы всю. Получаете отказаться программистов миф мы, <em>не пишете размере</em> количества нее, по две.</p>
+			<p><a href="examples/index.htm" target="_blank">Эта ссылка откроется в новом окне</a></p>
+		</section>
+	</div></div> -->
 
 
-
-</div>
+	<div class="progress"><div></div></div>
+	<script src="shower/scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
 </body>
 </html>
