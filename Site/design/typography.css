@@ -39,3 +39,19 @@ h1 {
 .Pre {
 	white-space: pre;
 }
+
+.HasHeaders h2 {
+	font-size: 105%;
+}
+
+.FloatLeft {
+	float: left;
+}
+
+.FloatRight {
+	float: right;
+}
+
+ul {
+	padding-left: 30px;
+}

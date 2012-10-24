@@ -63,6 +63,7 @@ bindReady(function(){
 			if (formErrors) form.removeChild(formErrors);
 
 			if (errors.length > 0) {
+				errors = arrayUnique(errors);
 				var div = document.createElement('div');
 				div.innerHTML = [
 					'<ul class="Errors" id="FormErrors">',
@@ -93,7 +94,10 @@ bindReady(function(){
 	}
 
 	// Last. Pinned footer.
-	var frame = document.getElementById('Frame');
-	PinnedFooter({frame: frame});
-
+	var search = document.location.search;
+	var NoPinnedFooter = search.indexOf('NoPinnedFooter') != -1;
+	if (!NoPinnedFooter) {
+		var frame = document.getElementById('Frame');
+		PinnedFooter({frame: frame});
+	}
 });

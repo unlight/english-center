@@ -156,3 +156,21 @@ function addFavIcons() {
 		}
 	}
 }
+
+
+function arrayUnique(inputArr) {
+	var arraySearch = function(needle, haystack) {
+		for (var fkey in haystack) {
+			if (haystack.hasOwnProperty(fkey)) {
+				if ((haystack[fkey] + '') === (needle + '')) return fkey;
+			}
+		}
+		return false;
+	}
+	var result = [];
+	for (var length = inputArr.length, i = 0; i < length; i++) {
+		var value = inputArr[i];
+		if (arraySearch(value, result) === false) result.push(value);
+	}
+	return result;
+}
