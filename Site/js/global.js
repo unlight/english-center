@@ -3,11 +3,8 @@ bindReady(function(){
 	var siteMenuWrapper = document.getElementById('SiteMenuWrapper');
 	insertHtml('menu.html', siteMenuWrapper);
 
-	insertHtml('search-module.html', function(params) {
-		var responseText = params.responseText;
-		var panel = document.getElementById('Panel');
-		panel.innerHTML += responseText;
-		var form = document.getElementById('SideSearchForm');
+	var submitHandler = function() {
+		var form = this;
 		form.addEventListener('submit', function(e) {
 			var search = form.Search.value;
 			var host = document.location.host;
@@ -19,7 +16,20 @@ bindReady(function(){
 			e.preventDefault();
 			return false;
 		});
-	});
+	}
+	var form = document.getElementById('SideSearchForm');
+	if (!form) {
+		insertHtml('search-module.html', function(params) {
+			var responseText = params.responseText;
+			var panel = document.getElementById('Panel');
+			panel.innerHTML += responseText;
+			var form = document.getElementById('SideSearchForm');
+			submitHandler.call(form);
+		});
+	} else {
+		submitHandler.call(form);
+	}
+
 
 	insertHtml('foot-module.html', function(params) {
 		document.getElementById('Foot').innerHTML = params.responseText;
