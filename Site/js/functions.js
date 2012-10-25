@@ -174,3 +174,7 @@ function arrayUnique(inputArr) {
 	}
 	return result;
 }
+
+function FaqAccordion() {
+	
+}

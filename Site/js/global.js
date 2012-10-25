@@ -103,6 +103,10 @@ bindReady(function(){
 		fixie.init();
 	}
 
+	if (typeof FaqAccordion == 'function') {
+		new FaqAccordion();
+	}
+
 	// Last. Pinned footer.
 	var search = document.location.search;
 	var NoPinnedFooter = search.indexOf('NoPinnedFooter') != -1;
