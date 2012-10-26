@@ -103,6 +103,15 @@ bindReady(function(){
 		fixie.init();
 	}
 
+	if (typeof Accordion == 'function') {
+		var settings = {
+			children: '#FaqList li',
+			panel: '.Item',
+			handle: 'a'
+		};
+		new Accordion(settings);
+	}
+
 	// Last. Pinned footer.
 	var search = document.location.search;
 	var NoPinnedFooter = search.indexOf('NoPinnedFooter') != -1;
