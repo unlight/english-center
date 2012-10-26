@@ -175,6 +175,28 @@ function arrayUnique(inputArr) {
 	return result;
 }
 
-function FaqAccordion() {
-	
+function Accordion(settings) {
+	var children = document.querySelectorAll(settings.children);
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i];
+		new function() {
+			var panel = child.querySelector(settings.panel);
+			panel.style.display = 'none';
+			var handle = child.querySelector(settings.handle);
+			handle.addEventListener('click', function(e) {
+				hidePanels();
+				panel.style.display = 'block';
+				e.preventDefault();
+				return false;
+			});
+		}
+	}
+
+	var hidePanels = function() {
+		for (var i = 0; i < children.length; i++) {
+			var child = children[i];
+			var panel = child.querySelector(settings.panel);
+			panel.style.display = 'none';
+		}
+	}
 }

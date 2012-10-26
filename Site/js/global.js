@@ -103,8 +103,13 @@ bindReady(function(){
 		fixie.init();
 	}
 
-	if (typeof FaqAccordion == 'function') {
-		new FaqAccordion();
+	if (typeof Accordion == 'function') {
+		var settings = {
+			children: '#FaqList li',
+			panel: '.Item',
+			handle: 'a'
+		};
+		new Accordion(settings);
 	}
 
 	// Last. Pinned footer.
