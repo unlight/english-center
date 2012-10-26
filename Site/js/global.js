@@ -44,7 +44,7 @@ bindReady(function(){
 
 
 	// Calculate cost.
-	window.ca = new function(){
+	new function() {
 		var priceForPage = 250;
 		var priceCoefficients = {
 			'Category': {1: 1.2, 2: 1, 3: 1.5, 4: 1.3},
@@ -96,7 +96,7 @@ bindReady(function(){
 			document.getElementById('TotalPriceValue').innerHTML = totalPrice;
 			document.getElementById('TotalPriceInfo').style.display = 'block';
 		});
-	};
+	}
 
 	// Lorem ipsum script.
 	if (typeof fixie != 'undefined') {

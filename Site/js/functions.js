@@ -75,6 +75,17 @@ function validateFormInput(input) {
 					errorText = "Не целое число.";
 				}
 			} break;
+			case 'One': {
+				var collection = input.form[input.name];
+				var checked = false;
+				for (var n in collection) {
+					if (collection[n].checked) {
+						checked = true;
+						break;
+					}
+				}
+				if (checked == false) errorText = "Не выбрано.";
+			} break;
 			default: throw "Unknown validation: " + [type, input].join(' ') + ".";
 		}
 		if (errorText) errors.push(labelText + ": " + errorText);
