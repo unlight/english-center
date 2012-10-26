@@ -91,7 +91,7 @@ form ul li {
 	margin-bottom: 10px;
 }
 
-form ul li label:first-child {
+form ul li > label:first-child {
 	display: block;
 	font-size: 105%;
 	float: left;
