@@ -416,3 +416,26 @@ BODY {
 .full .progress-off {
 	z-index:1;
 	}
+
+
+/* ===================== Custom */
+
+		.cover h2 {
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+		}
+		.cover h2,
+		.cover h2 {
+			color:#FFF;
+			text-align:center;
+		}
+		#Title h2 {
+			font-size:70px;
+		}
+
+
+.slide ol,
+.slide ul {
+	padding-left: 40px;
+}
