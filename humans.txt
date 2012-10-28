@@ -10,3 +10,17 @@ https://developer.mozilla.org
 3. Sublime-Text-2 
 Текстовый редактор с подстветкой кода.
 http://www.sublimetext.com/2/
+
+4. Pixie
+Показывает цвет точки
+http://www.nattyware.com/pixie.php
+
+5. Fixie.js
+Добавляет текст Lorem Ipsum
+https://github.com/ryhan/fixie
+
+6. Firebug
+
+7. NikFileTree
+
+8. FireShot
