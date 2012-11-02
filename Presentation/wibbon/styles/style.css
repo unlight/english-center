@@ -457,10 +457,18 @@ BODY {
 }
 
 .full .progress {
-	bottom: 10px;
+	bottom: 5px;
 }
 
 .full .slide:after {
-	bottom: 10px;
+	bottom: 5px;
 	left: 65px;
+}
+
+#Timer {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	opacity: 0.2;
+	font-size: 70%;
 }
