@@ -21,6 +21,9 @@
 			</header>
 			<p>Сайт организации, делаем переводы, обучаем.
 			</p>
+			<p>
+				<a target="_blank" href="http://unlight.github.com/english-center/Site/">http://unlight.github.com/english-center/Site/</a>
+			</p>
 		</section>
 	</div></div>
 
@@ -38,9 +41,12 @@
 				<h1>Цели и задачи проекта</h1>
 			</header>
 			<ul>
+				<!-- Цели -->
 				<li>Облегчение получения пользователями актуальной информации о компании</li>
-				<li>Сокращение расходов на службы технической и/или информационной поддержки</li>
-				<li>Предоставить расчет стоимости (экономия времени)</li>
+				<!-- Задачи -->
+				<li>Сокращение расходов на службу информационной поддержки</li>
+				<!-- <li>Предоставить расчет стоимости (экономия времени)</li> -->
+				<li>Увеличение лояльности клиентов</li>
 				<li>Совершенствование и модернизация услуг</li>
 			</ul>
 		</section>
@@ -51,38 +57,103 @@
 			<header>
 				<h1>Инструменты и технологии</h1>
 			</header>
-			<ol>
-				<li>normalize.css</li>
-				<li>Sublime-Text-2</li>
-				<li>Pixie</li>
-				<li>Fixie.js</li>
-				<li>Firebug</li>
-				<li>NikFileTree</li>
-			</ol>
+			<div style="width:50%; display: inline-block; float: left">
+				<ol>
+					<li>normalize.css</li>
+					<li>Sublime-Text-2</li>
+					<li>Pixie</li>
+					<li>Fixie.js</li>
+					<li>Firebug</li>
+				</ol>
+			</div>
+			<div style="width:50%; display: inline-block">
+				<ul>
+					<li>Статика</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+				</ul>
+			</div>
 		</section>
 	</div></div>
 
 	<div class="slide" id="StructureFiles"><div>
 		<section>
 			<header>
-				<h1>Физическая струткура</h1>
+				<h1>Физическая структура</h1>
 			</header>
+				<pre style="white-space:pre;font-size:24px;line-height:100%">/ <strong>(html файлы)</strong>
+|---about.html
+|---calculate-cost.html
+|---contacts.html
+| ...
+|---test.html
+|---design <strong>(css файлы, логотип, иконка, картинки элементов интерфейса)</strong>
+|   |--- ...
+|   |---logo.jpg
+|   `---typography.css
+|---js <strong>(javascript файлы, скрипты)</strong>
+|   |---functions.js
+|   |---global.js
+|   `---pinned-footer.js
+`---uploads <strong>(фотографии, картинки для текста и т.д.)</strong>
+    |--- ...
+    `---picture.jpg</pre>
 		</section>
 	</div></div>
 
 	<div class="slide" id="LogicStructure"><div>
 		<section>
 			<header>
-				<h1>Логическая струткура</h1>
+				<h1>Логическая структура</h1>
 			</header>
+				<pre style="white-space:pre;font-size:23px;line-height:100%">Главная
+|--- Новости 
+|    |--- Разговорный клуб
+|    |--- Обучение
+|    `--- Тренинги
+|--- Информация 
+|    |--- О центре
+|    |--- Контакты
+|    |--- Преподаватели
+|    |--- Отзывы
+|    `--- Часто задаваемые вопросы
+|--- Программы 
+|    |--- Деловой английский
+|    |--- Английский для школьников
+|    |--- ... 
+|    `--- Дистанционное обучение
+`--- Сервис
+     `--- Расчёт стоимости перевода</pre>
 		</section>
 	</div></div>
 
 	<div class="slide" id="Site"><div>
 		<section>
 			<header>
-				<h1>Про сайт</h1>
+				<h1>Сайт</h1>
 			</header>
+			
+			<div style="width:50%; display: inline-block; float: left">
+			<ul>
+				<li>Блочная вёрстка</li>
+				<li>Двухколоночный макет</li>
+				<li>Фиксированная ширина</li>
+				<!-- На главной странице в боковой панели всё меню дублируется -->
+			</ul>
+			</div>
+			
+			<div style="width:50%; display: inline-block; float: left">
+				<ul>
+					<li>Head (шапка)</li>
+					<li>Горизонтальное меню</li>
+					<li>Боковая панель</li>
+					<li>Контент</li>
+					<li>"Хлебные крошки"</li>
+					<li>Foot (футер, подвал)</li>
+				</ul>
+			</div>
+
 		</section>
 	</div></div>
 
@@ -92,15 +163,66 @@
 				<h1>Список скриптов</h1>
 			</header>
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Текущий год</li>
+				<li>Иконка для внешней ссылки</li>
+				<li>Прибитый футер к низу страницы</li>
+				<li>Раскрывающийся список (Accordion)</li>
+				<li>Расчет приблизительной стоимости услуги</li>
+				<li>Поиск в Google</li>
 			</ul>
 		</section>
 	</div></div>
+
+	<div class="slide" id="CurrentYear"><div>
+		<section>
+			<header>
+				<h1>Текущий год</h1>
+			</header>
+			<p><img src="pictures/footer.png" alt=""></p>
+			<p>Copyright (с) 2011 - <code>&lt;span id="CurrentYear">&lt;/span></code> </p>
+			<p><code>(new Date()).getFullYear();</code></p>
+		</section>
+	</div></div>
+
+	<div class="slide" id="PinnedFooterScript"><div>
+		<section>
+			<header>
+				<h1>Прибитый футер к низу страницы</h1>
+			</header>
+			<code>js/pinned-footer.js</code>
+			<pre>
+			<code>var frame = document.getElementById('Frame');</code>
+			<code>PinnedFooter({frame: frame});</code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide cover coverOverlay" id="PinnedFooter1"><div>
+		<section>
+			<header>
+				<h1 class="Top">Проблема: футер не внизу</h1>
+			</header>
+			
+			<img src="pictures/no-pinned-footer.png" alt="" />
+
+			<!-- Идея: что известна высота окна, 
+			1. вычисляем сколько надо добавить к #Body
+			2. устанавливаем высоту #Body -->
+
+		</section>
+	</div></div>
+
+	<div class="slide cover coverOverlay" id="PinnedFooter2"><div>
+		<section>
+			<header>
+				<h1 class="Top">Футер внизу</h1>
+			</header>
+			
+			<img src="pictures/pinned.png" alt="" />
+
+		</section>
+	</div></div>
+
 
 	<div class="slide" id="ExternalLink"><div>
 		<section>
@@ -113,15 +235,20 @@
 				<li>иконка</li>
 				<li><code>target=blank</code></li>
 			</ul>
-<!-- 			<p>Если в тексте есть ссылка на внешний ресурс, 
-				то скрипт добавляет иконку сайта и атрибут <code>target=blank</code><br />
-			http://g.etfv.co/ <br />
-			<a href="https://github.com/potatolondon/getfavicon">https://github.com/potatolondon/getfavicon</a>
-		</p> -->
 		</section>
 	</div></div>
 
-	
+	<div class="slide" id="Accordion"><div>
+		<section>
+			<header>
+				<h1>Раскрывающийся список (Accordion)</h1>
+			</header>
+			<!-- <p>На странице "Часто задаваемые вопросы"</p> -->
+			<img src="pictures/faq.png" alt="" />
+		</section>
+	</div></div>
+
+
 
 	<div class="slide" id="Future"><div>
 		<section>
@@ -142,6 +269,10 @@
 				<h1>Спасибо за внимание.</h1>
 			</header>
 			<p>Вопросы?</p>
+			<p>Исходники на github: <br/>
+			 <a target="_blank" href="https://github.com/unlight/english-center">github.com/unlight/english-center</a></p>
+			<p>Демо: <br/>
+				<a target="_blank" href="http://unlight.github.com/english-center/Site/">unlight.github.com/english-center/Site</a></p>
 		</section>
 	</div></div>
 

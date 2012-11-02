@@ -439,3 +439,28 @@ BODY {
 .slide ul {
 	padding-left: 40px;
 }
+
+.coverOverlay h1 {
+	background: rgba(0,0,0, 0.7);
+	color: #fff;
+	border-radius: 5px;
+	padding: 0px 0.2em;
+}
+
+.Top {
+	position: absolute; 
+	top: 10px;
+}
+
+.slide header {
+	margin-bottom: 45px;
+}
+
+.full .progress {
+	bottom: 10px;
+}
+
+.full .slide:after {
+	bottom: 10px;
+	left: 65px;
+}
