@@ -205,6 +205,18 @@ ul.DataList {
 	list-style-type: circle;
 }
 
+/* ================================== Index page */
+
+.ContentColumn h1,
+.ContentColumn h2 {
+	font-size: 16px;
+}
+
+.ContentColumn h3 {
+	font-size: 14px;
+	font-style: italic;
+}
+
 /* ==================== Debug */
 /*#Content {
 	border: 5px dotted red;
