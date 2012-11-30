@@ -31,11 +31,6 @@ bindReady(function(){
 		submitHandler.call(form);
 	}
 
-
-	insertHtml('foot-module.html', function(params) {
-		document.getElementById('Foot').innerHTML = params.responseText;
-	});
-
 	// Adding favicons.
 	addFavIcons();
 
