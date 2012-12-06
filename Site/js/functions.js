@@ -186,8 +186,39 @@ function arrayUnique(inputArr) {
 	return result;
 }
 
+function getStyle(element, property) {
+	var result;
+	if (window.getComputedStyle) {
+		result = getComputedStyle(element, null);
+	} else {
+		result = element.currentStyle;
+	}
+	if (property) {
+		result = result[property];
+	}
+	return result;
+}
+
+function animate(options) {
+	var start = new Date; // сохранить время начала 
+	var duration = options.duration || 1000;
+	var end = options.end;
+	var timer = setInterval(function() {
+		// вычислить сколько времени прошло
+		var progress = (new Date - start) / duration;
+		if (progress > 1) progress = 1;
+		// отрисовать анимацию
+		options.step(progress);
+		if (progress == 1) {
+			clearInterval(timer); // конец :)
+			if (typeof end == "function") end();
+		}
+	}, options.delay || 10); // по умолчанию кадр каждые 10мс
+}
+
 function Accordion(settings) {
 	var children = document.querySelectorAll(settings.children);
+	var openedPanel;
 	for (var i = 0; i < children.length; i++) {
 		var child = children[i];
 		new function() {
@@ -195,8 +226,19 @@ function Accordion(settings) {
 			panel.style.display = 'none';
 			var handle = child.querySelector(settings.handle);
 			handle.addEventListener('click', function(e) {
-				hidePanels();
-				panel.style.display = 'block';
+				if (openedPanel != panel) {
+					hidePanels();
+					panel.style.display = "block";
+					var h = parseInt(getStyle(panel, "height"), 10);
+					panel.style.height = "0";
+					animate({
+						duration: 500,
+						step: function(p) {
+							panel.style.height = (p * h) + "px";
+						}
+					});
+					openedPanel = panel;
+				}
 				e.preventDefault();
 				return false;
 			});
@@ -207,7 +249,26 @@ function Accordion(settings) {
 		for (var i = 0; i < children.length; i++) {
 			var child = children[i];
 			var panel = child.querySelector(settings.panel);
-			panel.style.display = 'none';
+			if (openedPanel && openedPanel != panel) {
+				panel.style.display = 'none';
+			}
+		}
+		// Close opened panel with animation.
+		if (openedPanel) {
+			var op = openedPanel;
+			var originalHeight = parseInt(getStyle(op, "height"), 10);
+			animate({
+				duration: 500,
+				step: function(p) {
+					op.style.height = (originalHeight * (1 - p)) + "px";
+					op.style.opacity = 1 - p;
+				},
+				end: function() {
+					op.style.display = "none";
+					op.style.opacity = 1;
+					op.style.height = "auto";
+				}
+			});
 		}
 	}
 }

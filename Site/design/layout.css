@@ -175,6 +175,7 @@ ul.DataList {
 
 .DataList li .Item {
 	margin: 0 0 10px 0;
+	overflow: hidden;
 }
 
 .DataList li.Item {
