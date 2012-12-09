@@ -152,36 +152,7 @@
 		</section>
 	</div></div> -->
 	
-	<style type="text/css">
-	#Cover p {
-		margin: 0.5em 0;
-		font-weight: bold;
-		font-size: 14px;
-		line-height: 1;
-	}
-	</style>
-
- 	<div class="slide cover" id="Cover"><div>
-		<section>
-			<header>
-				<img src="pictures/elements2.png" alt="">
-			</header>
-			<div style="text-align: right; background: rgba(255,255,255, 0.7);float:right;position:relative;top: 210px;">
-<!-- 				<p>Fixie.js</p>
-				<p>normalize.css</p> -->
-				<!-- <p>Фиксированная ширина</p> -->
-				
-<!-- 					<p> </p>
-					<p>1. Шапка (Head, хэдер)</p>
-					<p>2. Горизонтальное меню</p>
-					<p>3. Боковая панель</p>
-					<p>4. Контент</p>
-					<p>5. "Хлебные крошки"</p>
-					<p>6. Подвал (Foot, футер)</p> -->
-			</div>
-		</section>
-	</div></div>
-
+	
 	<style type="text/css">
 	#Screenshots img {
 		max-width: 49%;
@@ -226,6 +197,67 @@
 			</div>
 		</section>
 	</div></div>
+	
+	
+	<style type="text/css">
+	#Cover p {
+		margin: 0.5em 0;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 1;
+	}
+	</style>
+
+ 	<div class="slide cover" id="Cover"><div>
+		<section>
+			<header>
+				<img src="pictures/elements2.png" alt="">
+			</header>
+			<div style="text-align: right; background: rgba(255,255,255, 0.7);float:right;position:relative;top: 210px;">
+<!-- 				<p>Fixie.js</p>
+				<p>normalize.css</p> -->
+				<!-- <p>Фиксированная ширина</p> -->
+				
+<!-- 					<p> </p>
+					<p>1. Шапка (Head, хэдер)</p>
+					<p>2. Горизонтальное меню</p>
+					<p>3. Боковая панель</p>
+					<p>4. Контент</p>
+					<p>5. "Хлебные крошки"</p>
+					<p>6. Подвал (Foot, футер)</p> -->
+			</div>
+		</section>
+	</div></div>
+
+	
+	<style type="text/css">
+	.screens .Top {
+		right: 100px;
+		top: 5px;
+	}
+	</style>
+	
+ 	<div class="slide screens cover coverOverlay" id="Screen1"><div><section>
+		<header><h1 class="Top">Главная страница</h1></header>
+			<img src="pictures/screen1.png" alt="" />
+	</section></div></div>
+	
+ 	<div class="slide screens cover coverOverlay" id="Screen2"><div><section>
+		<header><h1 class="Top">Программы</h1></header>
+			<img src="pictures/screen2.png" alt="" />
+	</section></div></div>
+
+ 	<div class="slide screens cover coverOverlay" id="Screen4"><div><section>
+		<header><h1 class="Top">Преподаватели</h1></header>
+			<img src="pictures/screen4.png" alt="" />
+	</section></div></div>
+			
+ 	<div class="slide screens cover coverOverlay" id="Screen3"><div><section>
+		<header><h1 class="Top">Расчет стоимости</h1></header>
+			<img src="pictures/screen3.png" alt="" />
+	</section></div></div>
+	
+
 
 	<div class="slide" id="Scripts"><div>
 		<section>
@@ -234,11 +266,11 @@
 			</header>
 			<ul>
 				<li>Текущий год</li>
+				<li>Поиск в Google</li>
 				<li>Иконка для внешней ссылки</li>
 				<li>Прижатый футер к низу страницы</li>
 				<li>Раскрывающийся список (Accordion)</li>
 				<li>Расчет приблизительной стоимости перевода</li>
-				<li>Поиск в Google</li>
 			</ul>
 		</section>
 	</div></div>
@@ -253,6 +285,27 @@
 			<p><code>(new Date()).getFullYear();</code></p>
 		</section>
 	</div></div>
+	
+	
+ 	<div class="slide" id="SearchInGoogle"><div><section>
+		
+		<header><h1>Поиск в Google</h1></header>
+			<img src="pictures/search-box.png" alt="" />
+			<pre>
+			<code>var host = document.location.host;</code>
+			<code>var q = encodeURIComponent(search + ' site:' + <kbd>host</kbd>);</code>
+			<code>var url = "https://www.google.ru/?q=" + <kbd>q</kbd> + '#q=' + <kbd>q</kbd>;</code>
+			<code>window.open(url);</code>
+			</pre>
+			
+	</section></div></div>
+	
+ 	<div class="slide" id="SearchResult"><div><section>
+		
+		<header><h1>Результаты поиска в Google</h1></header>
+			
+			
+	</section></div></div>
 
 	<div class="slide" id="PinnedFooterScript"><div>
 		<section>

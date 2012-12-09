@@ -11,7 +11,7 @@ bindReady(function(){
 			var host = document.location.host;
 			if (host != "") {
 				var q = encodeURIComponent(search + ' site:' + host);
-				var url  = "https://www.google.ru/?q=" + q + '#q=' + q;
+				var url = "https://www.google.ru/?q=" + q + '#q=' + q;
 				window.open(url);
 			}
 			e.preventDefault();
