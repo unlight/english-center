@@ -449,7 +449,8 @@ BODY {
 
 .Top {
 	position: absolute; 
-	top: 10px;
+	right: 100px;
+	top: 5px;
 }
 
 .slide header {
