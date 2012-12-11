@@ -1,3 +1,6 @@
 [submodule "Presentation/shower"]
 	path = Presentation/shower
 	url = git://github.com/shower/shower.git
+[submodule "Site"]
+	path = Site
+	url = ./Site
